@@ -24,7 +24,7 @@ describe("contract ERC721_Example tests:", function () {
            console.log( await ERC721_ExampleDeployed.ownerOf(4444) )
            expect( ( await ERC721_ExampleDeployed.ownerOf(4444) ) ).to.equal(owner.address);
          });
-         it("Owner has the token.", async function () {
+         it("Metadata animation is at the right Fleek storage location.", async function () {
            console.log( await ERC721_ExampleDeployed.tokenURI(4444) )
            expect( ( await ERC721_ExampleDeployed.tokenURI(4444) ) ).to.equal("https://storageapi.fleek.co/marcuswentz-team-bucket/WeiGold.gif");
          });
