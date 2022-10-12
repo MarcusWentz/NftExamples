@@ -3,7 +3,7 @@ pragma solidity 0.8.17;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract ERC721_Example is ERC721URIStorage {
+contract shardeumLogoNFT is ERC721URIStorage {
 
   constructor() ERC721 ("shardeumLogo", "SL"){
     _safeMint(msg.sender, 1);
