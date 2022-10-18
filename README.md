@@ -1,4 +1,4 @@
-# NFT_ERC721_GIF_FLEEK
+# NftExamples
 
 NFT animation deployed to Rinkeby test network as an ERC721 token with Fleek to host Metadata securely. 
 
