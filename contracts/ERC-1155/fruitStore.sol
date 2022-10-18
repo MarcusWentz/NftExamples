@@ -21,7 +21,7 @@ contract FruitStore is ERC1155 { //ERC1155 cannot also be a ERC1155Holder for ha
     constructor(uint extraFruitIdPick) public ERC1155("https://en.wikipedia.org/wiki/{name}") { //When using safeTransferFrom, have data as 0x00.
         if(extraFruitIdPick > 7) { revert invalidFruitIdNumber(); } //Don't check for negative since uint must be 0 or positive.
         ExtraFruitId = extraFruitIdPick; //"immutable" can only be changed in the constructor.
-        _mint(msg.sender, Raspberry,    100*(1 ether), "");  //To send tokens from wallet to wallet, use setApprovalForAll(walletToSendTo,true).
+        _mint(msg.sender, Raspberry,    100*(1 ether), "");  //To send tokens from wallet to wallet, send the following Tx to this contract: "setApprovalForAll(walletToSendTo,true)".
         _mint(msg.sender, Watermelon,   100*(1 ether), "");
         _mint(msg.sender, Blueberry,    100*(1 ether), "");
         _mint(msg.sender, Avacado,      100*(1 ether), "");
@@ -34,6 +34,4 @@ contract FruitStore is ERC1155 { //ERC1155 cannot also be a ERC1155Holder for ha
 
 }
 
-contract BurnTokensERC1155 is ERC1155Holder {
-    //Tokens send to this contract will be burned.
-}
+contract BurnTokensERC1155 is ERC1155Holder {} //Tokens sent to this contract will be lost forever. 
