@@ -11,12 +11,12 @@ contract Leaderboard is ERC1155 { //ERC1155 cannot also be a ERC1155Holder for h
 
     constructor() ERC1155("") { } 
 
-    function a() public {
+    function mintNewLeaderBoardToken() public {
         leaderboardTokenId = 1 + leaderboardTokenId;
         leaderboardWalletFrequency[msg.sender] = 1 + leaderboardWalletFrequency[msg.sender]; 
         if(leaderboardUserBest[msg.sender] == 0){
             leaderboardUserBest[msg.sender] = leaderboardTokenId; 
         }
-        _mint(msg.sender, leaderboardTokenId, 1, "");
+        _mint(msg.sender, leaderboardTokenId, 1, ""); //Only 1 token per tokenId, acting like an NFT ERC-721 token.
     }
 }
