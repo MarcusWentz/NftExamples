@@ -7,18 +7,17 @@ require("@nomiclabs/hardhat-etherscan")
 // To export your private key from Metamask, open Metamask and
 // go to Account Details > Export Private Key
 // Be aware of NEVER putting real Ether into testing accounts
-const PRIVATE_KEY = process.env.devTestnetPrivateKey
-const RINKEBY_RPC_URL = process.env.rinkebyInfuraAPIKey
+const SEPOLIA_RPC_URL = process.env.sepoliaInfuraHttps
 
 module.exports = {
   networks: {
-    rinkeby: {
-      url: RINKEBY_RPC_URL,
+    sepolia: {
+      url: SEPOLIA_RPC_URL,
       accounts: [`0x${process.env.devTestnetPrivateKey}`]
     }
   },
     etherscan: {
-    apiKey: process.env.etherscanAPIKey
+    apiKey: process.env.etherscanApiKey
   },
-  solidity: "0.8.9"
+  solidity: "0.8.17"
 };
