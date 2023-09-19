@@ -5,10 +5,10 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const ERC721_Example = await ethers.getContractFactory("ERC721_Example");
-  const ERC721_ExampleDeployed = await ERC721_Example.deploy();
+  const WeiGoldLogo = await ethers.getContractFactory("WeiGoldLogo");
+  const WeiGoldLogoDeployed = await WeiGoldLogo.deploy();
 
-  console.log("Token address:", ERC721_ExampleDeployed.address);
+  console.log("Token address:", WeiGoldLogoDeployed.address);
 }
 
 main()

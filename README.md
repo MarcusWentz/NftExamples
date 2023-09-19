@@ -2,11 +2,11 @@
 
 ## Overview 
 
-NFT animation deployed to Rinkeby test network as an ERC721 token with Fleek to host Metadata securely. 
-
-## Verify Contract With Hardhat
+NFT animation deployed to Sepolia test network as an ERC721 token with Fleek to host Metadata securely. 
 
 Deployed and verified smart contract source code Sepolia NFT contract.
+
+## Verify Contract With Hardhat
 
 Deploy
 ```
@@ -14,7 +14,7 @@ npx hardhat run scripts/deploy.js --network sepolia
 ```
 Verify 
 ```
-npx hardhat verify --contract contracts/ERC-721/WeiGoldLogo.sol:ERC721_Example --network sepolia <deployed_sepolia_address>
+npx hardhat verify --contract contracts/ERC-721/WeiGoldLogo.sol:WeiGoldLogo --network sepolia <deployed_sepolia_address>
 ```
 Note:
 Run

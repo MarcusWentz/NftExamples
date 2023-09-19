@@ -10,14 +10,34 @@ require("@nomiclabs/hardhat-etherscan")
 const SEPOLIA_RPC_URL = process.env.sepoliaInfuraHttps
 
 module.exports = {
+  solidity: "0.8.17",
   networks: {
     sepolia: {
       url: SEPOLIA_RPC_URL,
       accounts: [`0x${process.env.devTestnetPrivateKey}`]
-    }
+    },
+    taiko: {
+      url: "https://rpc.jolnir.taiko.xyz",
+      accounts: [`0x${process.env.devTestnetPrivateKey}`]
+    },
   },
-    etherscan: {
+  etherscan: { 
+  // Sepolia Etherscan
     apiKey: process.env.etherscanApiKey
   },
-  solidity: "0.8.17"
-};
+  // // Taiko Blockscout
+  // apiKey: {
+  //   taiko: "42069",
+  // },
+  // customChains: [
+  //     {
+  //       network: "taiko",
+  //       chainId: 167007,
+  //       urls: {
+  //           apiURL: "https://blockscoutapi.jolnir.taiko.xyz/api",
+  //           browserURL: "https://explorer.jolnir.taiko.xyz/",
+  //       },
+  //     },
+  //   ],
+  // }
+}
